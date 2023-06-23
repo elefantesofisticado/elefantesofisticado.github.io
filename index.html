@@ -51,9 +51,9 @@
   </div>
   
   <div id="portfolio">
-    <div class="project">
-      <h2>Proyecto 1</h2>
-      <p>Descripción del primer proyecto. Detalles sobre las tecnologías utilizadas y los resultados obtenidos.</p>
+    <div class="project" id="project1">
+      <h2 id="sub-title">Pokeapi</h2>
+      <p id="pokeapi">Descripción del primer proyecto. Detalles sobre las tecnologías utilizadas y los resultados obtenidos.</p>
     </div>
   
     <div class="project">
@@ -66,5 +66,18 @@
       <p>Descripción del tercer proyecto. Comparte los logros alcanzados y las lecciones aprendidas.</p>
     </div>
   </div>
+  <script>
+    var tituloElement = document.getElementById('sub-title');
+    tituloElement.innerHTML = 'POKEAPI';
+
+    // Obtener el primer elemento que coincida con la clase
+    var messageElement = document.querySelector('.message');
+    // Modificar el contenido de texto del elemento
+    messageElement.textContent = 'Nuevo mensaje';
+
+    // Modificar una propiedad de estilo en el elemento
+    messageElement.style.color = 'red';
+    messageElement.style.fontSize = '24px';
+  </script>
 </body>
 </html>
