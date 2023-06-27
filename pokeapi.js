@@ -1,4 +1,3 @@
-console.log("pokeapi")
 
 const axios = require('axios');
 const { createCanvas, loadImage } = require('canvas');
@@ -45,8 +44,11 @@ async function obtenerInformacionPokemon(idPokemon) {
   }
 }
 
+console.log("pokeapi")
+console.log(idPokemon)
+
 // Llamar a la función para obtener información del Pokémon
 const numeroAleatorio = Math.floor(Math.random() * 1010) + 1;
 const idPokemon = numeroAleatorio;
 obtenerInformacionPokemon(idPokemon);
-console.log(idPokemon)
+
