@@ -52,3 +52,8 @@ const numeroAleatorio = Math.floor(Math.random() * 1010) + 1;
 const idPokemon = numeroAleatorio;
 obtenerInformacionPokemon(idPokemon);
 
+var myElement = document.getElementById("sub-title2");
+myElement.textContent = idPokemon;
+
+
+
