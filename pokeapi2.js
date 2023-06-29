@@ -19,6 +19,6 @@ console.log("pokeapi")
 
 
 function cambiarTitulo() {
-  var tituloElemento = document.getElementById("descripcion2");
-  tituloElemento.innerHTML = "Nuevo Título";
+  var parrafoElemento = document.getElementById("descripcion2");
+  parrafoElemento.innerHTML = "Nuevo Título";
 }
