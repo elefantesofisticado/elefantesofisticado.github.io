@@ -10,17 +10,18 @@ fetch('https://pokeapi.co/api/v2/pokemon/1')
   .then(function(data) {
     console.log(data);
     console.log(data.name)
+    document.addEventListener("DOMContentLoaded", function() {
+      var nameElement = document.getElementById("descripcion1");
+      nameElement.textContent = "Nombre: "data.name;
+      document.body.appendChild(newElement);
+    });
+
     // Hacer algo con los datos obtenidos
   })
   .catch(function(error) {
     console.error('Error:', error);
   });
 
-document.addEventListener("DOMContentLoaded", function() {
-  var nameElement = document.getElementById("descripcion1");
-  nameElement.textContent = "Nombre: "data.name;
-  document.body.appendChild(newElement);
-});
 
 
 
