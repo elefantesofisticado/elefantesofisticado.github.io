@@ -19,7 +19,9 @@ fetch('https://pokeapi.co/api/v2/pokemon/1')
 
 function cambiarTitulo() {
   var parrafoElemento = document.getElementById("descripción1");
-    parrafoElemento.textContent = "Nuevo Título and blablablablablabla";
+    parrafoElemento.textContent = "Nuevo texto";
+    parrafoElemento.style.color = "red";
+    parrafoElemento.setAttribute("data-custom", "valor personalizado");
 }
 
 console.log("end run script pokeapi2")
