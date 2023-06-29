@@ -17,11 +17,8 @@ fetch('https://pokeapi.co/api/v2/pokemon/1')
   });
 
 
-function cambiarTitulo() {
-  var parrafoElemento = document.getElementById("descripción1");
-    parrafoElemento.textContent = "Nuevo texto";
-    parrafoElemento.style.color = "red";
-    parrafoElemento.setAttribute("data-custom", "valor personalizado");
-}
+var newElement = document.createElement("div");
+newElement.textContent = "Nuevo elemento";
+document.body.appendChild(newElement);
 
 console.log("end run script pokeapi2")
