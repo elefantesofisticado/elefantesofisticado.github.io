@@ -16,9 +16,12 @@ fetch('https://pokeapi.co/api/v2/pokemon/1')
     console.error('Error:', error);
   });
 
+document.addEventListener("DOMContentLoaded", function() {
+  var newElement = document.createElement("div");
+  newElement.textContent = "Nuevo elemento";
+  document.body.appendChild(newElement);
+});
 
-var newElement = document.createElement("div");
-newElement.textContent = "Nuevo elemento";
-document.body.appendChild(newElement);
+
 
 console.log("end run script pokeapi2")
