@@ -8,9 +8,9 @@ fetch('https://pokeapi.co/api/v2/pokemon/1')
     throw new Error('Error en la solicitud de la API: ' + response.status);
   })
   .then(function(data) {
-    console.log(data);
-    console.log(data.name)
     document.addEventListener("DOMContentLoaded", function() {
+      console.log(data);
+      console.log(data.name)
       var nameElement = document.getElementById("descripcion1");
       nameElement.textContent = "Nombre: ";
       nameElement.textContent = data.name;
