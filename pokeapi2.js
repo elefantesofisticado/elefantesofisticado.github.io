@@ -18,7 +18,7 @@ fetch('https://pokeapi.co/api/v2/pokemon/1')
 
 document.addEventListener("DOMContentLoaded", function() {
   var newElement = document.getElementById("descripcion1");
-  newElement.textContent = "Nuevo elemento";
+  newElement.textContent = data.name;
   document.body.appendChild(newElement);
 });
 
