@@ -13,3 +13,8 @@ fetch('https://pokeapi.co/api/v2/pokemon/1')
   });
 
 console.log("pokeapi")
+
+function cambiarTitulo() {
+  var tituloElemento = document.getElementById("descripcion2");
+  tituloElemento.innerHTML = "Nuevo Título";
+}
