@@ -2,6 +2,8 @@ fetch('https://pokeapi.co/api/v2/pokemon/1')
   .then(function(response) {
     if (response.ok) {
       return response.json(); // Convertir la respuesta en formato JSON
+      const datosPokemon = response.data;
+      const nombre = datosPokemon.name;
     }
     throw new Error('Error en la solicitud de la API: ' + response.status);
   })
@@ -13,6 +15,7 @@ fetch('https://pokeapi.co/api/v2/pokemon/1')
   });
 
 console.log("pokeapi")
+console.log(nombre)
 
 function cambiarTitulo() {
   var tituloElemento = document.getElementById("descripcion2");
