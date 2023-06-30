@@ -23,6 +23,11 @@ fetch('https://pokeapi.co/api/v2/pokemon/1')
     console.error('Error:', error);
   });
 
+function cambiarTitulo() {
+  var tituloElemento = document.getElementById("sub-title");
+  tituloElemento.innerHTML = "Reto: Acierta el tipo de Pokemon!";
+}
+
 
 
 
