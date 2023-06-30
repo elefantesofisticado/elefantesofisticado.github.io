@@ -1,5 +1,8 @@
 console.log("start run script pokeapi2")
 
+const numeroAleatorio = Math.floor(Math.random() * 1010) + 1;
+const idPokemon = numeroAleatorio;
+
 fetch('https://pokeapi.co/api/v2/pokemon/${idPokemon}')
   .then(function(response) {
     if (response.ok) {
@@ -19,13 +22,5 @@ fetch('https://pokeapi.co/api/v2/pokemon/${idPokemon}')
   .catch(function(error) {
     console.error('Error:', error);
   });
-
-
-
-
-const numeroAleatorio = Math.floor(Math.random() * 1010) + 1;
-const idPokemon = numeroAleatorio;
-obtenerInformacionPokemon(idPokemon);
-
 
 console.log("end run script pokeapi2")
