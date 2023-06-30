@@ -11,7 +11,6 @@ fetch('https://pokeapi.co/api/v2/pokemon/${idPokemon}')
     document.addEventListener("DOMContentLoaded", function() {
       console.log(data);
       console.log(data.name)
-      console.log(len(data.types)
       console.log(data.types)
     });
 
