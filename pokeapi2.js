@@ -20,13 +20,8 @@ fetch('https://pokeapi.co/api/v2/pokemon/${idPokemon}')
     console.error('Error:', error);
   });
 
-function cambiarTitulo() {
-  var tituloElemento = document.getElementById("sub-title");
-  tituloElemento.innerHTML = "Reto: Acierta el tipo de Pokemon!";
-}
-var nameElement = document.getElementById("descripcion1");
-      nameElement.textContent = "Nombre: ";
-      document.body.appendChild(newElement);
+
+
 
 const numeroAleatorio = Math.floor(Math.random() * 1010) + 1;
 const idPokemon = numeroAleatorio;
