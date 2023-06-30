@@ -1,54 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Portafolio de Trabajos de Programación</title>
-  <script src="archivo.js"></script>
-  <script src="pokeapi2.js"></script>
-
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to bottom right, #f2f2f2, #cccccc);
-    }
-    
-    #header {
-      background: linear-gradient(to bottom right, #333333, #666666);
-      padding: 20px;
-      color: white;
-      text-align: center;
-    }
-    
-    #header h1 {
-      font-size: 32px;
-    }
-    
-    #portfolio {
-      padding: 20px;
-      text-align: center;
-    }
-    
-    #portfolio .project {
-      margin-bottom: 40px;
-      background: #ffffff;
-      padding: 20px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-    
-    #portfolio .project h2 {
-      font-size: 24px;
-      margin-bottom: 10px;
-    }
-    
-    #portfolio .project p {
-      font-size: 14px;
-      color: #999999;
-    }
-  </style>
-  <script src="elefantesofisticado.github.io/archivo.js"></script>
-</head>
 <body>
   <div id="header">
     <h1>Portafolio de Trabajos de Programación</h1>
@@ -56,10 +5,36 @@
   
   <div id="portfolio">
     <div class="project" id="project1">
-      <h2 id="sub-title">Pokeapi</h2>
+      <h2 id="sub-title">Proyecto 1</h2>
       <div id="descripcion1">
         <p>Descripci0n del primer proyecto. Detalles sobre las tecnologías utilizadas y los resultados obtenidos.</p>
-      </div>  
+      </div>
+      <div id="imagenPokemon">
+        <img id="imagenPokemon2" src="https://www.sqwordle.io/static/media/mystery.3650ba250b7070440dc0.jpg" alt="¿Quien es ese Pokemón?">
+      </div>
+      <div id="menu">
+      <select id="miMenu" onchange="mostrarSeleccion()">
+      <label for="lang">Tipos</label>
+        <option value="steel">Acero</option>
+        <option value="fairy">Hada</option>
+        <option value="normal">Normal</option>
+        <option value="flying">Volador</option>
+        <option value="grass">Pasto</option>
+        <option value="dark">Oscuridad</option>
+        <option value="bug">Insecto</option>
+        <option value="poison">Veneno</option>
+        <option value="fighting">Lucha</option>
+        <option value="rock">Roca</option>
+        <option value="ghost">Fantasma</option>
+        <option value="ground">Arena</option>
+        <option value="water">Agua</option>
+        <option value="electric">Eléctrico</option>
+        <option value="psychic">Psíquico</option>
+        <option value="dragon">Dragón</option>
+        <option value="fire">Fuego</option>
+        <option value="sand">Arena</option>
+ </select>
+      </div>
     </div>
   
     <div class="project">
