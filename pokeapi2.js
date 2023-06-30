@@ -10,8 +10,8 @@ fetch('https://pokeapi.co/api/v2/pokemon/${idPokemon}')
   .then(function(data) {
     document.addEventListener("DOMContentLoaded", function() {
       console.log(data);
-      console.log(data.name)
-      console.log(data.types)
+      console.log(data.name);
+      console.log(data.types);
     });
 
     // Hacer algo con los datos obtenidos
