@@ -1,6 +1,6 @@
 console.log("start run script pokeapi2")
 
-fetch('https://pokeapi.co/api/v2/pokemon/1')
+fetch('https://pokeapi.co/api/v2/pokemon/${idPokemon}')
   .then(function(response) {
     if (response.ok) {
       return response.json(); 
@@ -11,10 +11,8 @@ fetch('https://pokeapi.co/api/v2/pokemon/1')
     document.addEventListener("DOMContentLoaded", function() {
       console.log(data);
       console.log(data.name)
-      var nameElement = document.getElementById("descripcion1");
-      nameElement.textContent = "Nombre: ";
-      nameElement.textContent = data.name;
-      document.body.appendChild(newElement);
+      console.log(len(data.types)
+      console.log(data.types)
     });
 
     // Hacer algo con los datos obtenidos
@@ -27,8 +25,13 @@ function cambiarTitulo() {
   var tituloElemento = document.getElementById("sub-title");
   tituloElemento.innerHTML = "Reto: Acierta el tipo de Pokemon!";
 }
+var nameElement = document.getElementById("descripcion1");
+      nameElement.textContent = "Nombre: ";
+      document.body.appendChild(newElement);
 
-
+const numeroAleatorio = Math.floor(Math.random() * 1010) + 1;
+const idPokemon = numeroAleatorio;
+obtenerInformacionPokemon(idPokemon);
 
 
 console.log("end run script pokeapi2")
