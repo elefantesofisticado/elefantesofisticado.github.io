@@ -1,59 +1,75 @@
+function obtenerNumeroAleatorio() {
+  const min = 1;
+  const max = 1010;
+  const numeroAleatorio = Math.floor(Math.random() * (max - min + 1)) + min;
+  return numeroAleatorio;
+}
 
-const axios = require('axios');
-const { createCanvas, loadImage } = require('canvas');
+const numeroAleatorio = obtenerNumeroAleatorio();
+const urlPokemon = `https://pokeapi.co/api/v2/pokemon/${numeroAleatorio}`;
 
-async function obtenerInformacionPokemon(idPokemon) {
-  const url = `https://pokeapi.co/api/v2/pokemon/${idPokemon}`;
-
+async function obtenerDatosPokemon(url) {
   try {
-    const respuesta = await axios.get(url);
-
-    // Verificar el código de respuesta
-    if (respuesta.status === 200) {
-      const datosPokemon = respuesta.data;
-
-      // Obtener información específica del Pokémon
-      const urlImagen = datosPokemon.sprites.front_default;
-      const nombre = datosPokemon.name;
-      const id = datosPokemon.id;
-      const tipos = datosPokemon.types.map(tipo => tipo.type.name);
-
-      // Obtener la imagen del Pokémon
-      const imagenResponse = await axios.get(urlImagen, {
-        responseType: 'arraybuffer'
-      });
-      const imagenBuffer = Buffer.from(imagenResponse.data);
-      const imagen = await loadImage(imagenBuffer);
-
-      // Imprimir la información
-      console.log('Nombre:', nombre);
-      console.log('Tipos:', tipos);
-      console.log('ID:', id);
-      console.log('Cantidad de Tipos:', tipos.length);
-
-      // Mostrar la imagen (opcional)
-      const canvas = createCanvas(imagen.width, imagen.height);
-      const ctx = canvas.getContext('2d');
-      ctx.drawImage(imagen, 0, 0);
-      canvas.createPNGStream().pipe(require('fs').createWriteStream('pokemon.png'));
-    } else {
-      console.log('No se pudo obtener información del Pokémon');
-    }
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
   } catch (error) {
-    console.log('Error al hacer la solicitud a la API de Pokémon:', error.message);
+    console.log('Error al obtener los datos del Pokémon:', error);
   }
 }
 
-console.log("pokeapi")
-console.log(idPokemon)
+async function mostrarTipoPrincipalPokemon(url) {
+  try {
+    const pokemon = await obtenerDatosPokemon(url);
+    const tipoPrincipal = pokemon.types[0].type.name;
+    console.log('Tipo principal del Pokémon:', tipoPrincipal);
+    const nombrePokemon = pokemon.name;
+    console.log("Su nombre es: ", nombrePokemon);
+    var mostrarNombre = document.getElementById("descripcion1");
+    mostrarNombre.textContent = nombrePokemon.toUpperCase();
+    //FOTO
+    console.log('Imagen del Pkmn:', pokemon.sprites.front_default);
+    var imagenContainer = document.getElementById('imagenPokemon');
+    var imagen = document.createElement('img');
+    imagen.src = pokemon.sprites.front_default;
+    imagen.alt = 'Imagen del Pokémon';
+    imagen.id = 'imagen-pokemon';
+    imagenContainer.appendChild(imagen);
+    return tipoPrincipal;
+  } catch (error) {
+    console.log('Error al mostrar el tipo principal del Pokémon:', error);
+  }
+}
 
-// Llamar a la función para obtener información del Pokémon
-const numeroAleatorio = Math.floor(Math.random() * 1010) + 1;
-const idPokemon = numeroAleatorio;
-obtenerInformacionPokemon(idPokemon);
+url = urlPokemon;
+mostrarTipoPrincipalPokemon(url);
 
-var myElement = document.getElementById("sub-title2");
-myElement.textContent = idPokemon;
+var listaSelect = document.getElementById("miMenu");
+listaSelect.addEventListener("change", mostrarSeleccion);
 
+function mostrarSeleccion() {
+  var tipoSeleccionado = listaSelect.value;
+  console.log("Tipo seleccionado:", tipoSeleccionado);
+  procesarDatosPokemon(url, tipoSeleccionado);
+}
 
-
+function procesarDatosPokemon(url, tipoSeleccionado) {
+  obtenerDatosPokemon(url)
+    .then(data => {
+      const tipoPrincipal = data.types[0].type.name;
+      if (tipoPrincipal == tipoSeleccionado) {
+        var resultado = document.getElementById("resultado");
+        resultado.textContent = "ACERTADO!";
+        console.log("ACERTADO!");
+      } else {
+        var resultado = document.getElementById("resultado");
+        resultado.textContent = "No es ese tipo";
+        console.log("Ahora no");
+      }
+      // Aquí puedes procesar los datos obtenidos antes de pasarlo a otra función
+      console.log('Tipo principal del Pokémon:', tipoPrincipal);
+    })
+    .catch(error => {
+      console.log('Error al procesar los datos del Pokémon:', error);
+    });
+}
