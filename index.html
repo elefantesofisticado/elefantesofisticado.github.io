@@ -11,17 +11,18 @@
   </div>
   
   <div id="portfolio">
+    <h2 id="sub-title">Acierta el tipo principal de este Pokemon</h2>
     <div class="project" id="project1">
-      <h2 id="sub-title">Proyecto 1</h2>
+      
       <div id="descripcion1">
-        <p>Descripci0n del primer proyecto. Detalles sobre las tecnologías utilizadas y los resultados obtenidos.</p>
+        nombre Pokemon
       </div>
       <div id="imagenPokemon">
-        <img id="imagenPokemon2" src="https://www.sqwordle.io/static/media/mystery.3650ba250b7070440dc0.jpg" alt="¿Quien es ese Pokemón?">
       </div>
+      
       <div id="menu">
       <select id="miMenu" onchange="mostrarSeleccion()">
-      <label for="lang">Tipos</label>
+      <label id="seleccion1" for="lang">Tipos</label>
         <option value="steel">Acero</option>
         <option value="fairy">Hada</option>
         <option value="normal">Normal</option>
@@ -42,7 +43,12 @@
         <option value="sand">Arena</option>
  </select>
       </div>
+      <br>
+
+      <div id="resultado"></div>
+
     </div>
+    
   
     <div class="project">
       <h2 id="sub-title2">Proyecto 2</h2>
@@ -54,7 +60,8 @@
       <p id="descripción3">Descripción del tercer proyecto. Comparte los logros alcanzados y las lecciones aprendidas.</p>
     </div>
   </div>
-  <script src="pokeapi2.js"></script>
+
+  <script src="pokeapi.js"></script>
 
 </body>
 </html>
