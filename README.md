@@ -1,8 +1,5 @@
 # elefantesofisticado.github.io
 
-copia de falconmasters
-
-fotos
-
+proyecto personal
 html
 css y js
